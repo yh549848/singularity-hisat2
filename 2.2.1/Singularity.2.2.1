@@ -1,5 +1,5 @@
 BootStrap: docker
-From: quay.io/biocontainers/hisat2:2.2.1--h1b792b2_3
+From: continuumio/miniconda3:4.7.12
 
 %apprun hisat2
   exec hisat2 "${@}"
@@ -37,3 +37,8 @@ From: quay.io/biocontainers/hisat2:2.2.1--h1b792b2_3
 %apprun hisatgenotype_locus.py
   exec hisatgenotype_locus.py "${@}"
 
+%post
+  . /opt/conda/bin/activate && \
+  conda install -q -y \
+    -c bioconda hisat2=2.2.1 && \
+  conda clean -a -q -f -y
