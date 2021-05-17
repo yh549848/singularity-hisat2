@@ -19,24 +19,6 @@ From: continuumio/miniconda3:4.7.12
 %apprun hisat2_simulate_reads.py
   exec hisat2_simulate_reads.py "${@}"
 
-%apprun hisatgenotype.py
-  exec hisatgenotype.py "${@}"
-
-%apprun hisatgenotype_build_genome.py
-  exec hisatgenotype_build_genome.py "${@}"
-
-%apprun hisatgenotype_extract_reads.py
-  exec hisatgenotype_extract_reads.py "${@}"
-
-%apprun hisatgenotype_extract_vars.py
-  exec hisatgenotype_extract_vars.py "${@}"
-
-%apprun hisatgenotype_hla_cyp.py
-  exec hisatgenotype_hla_cyp.py "${@}"
-
-%apprun hisatgenotype_locus.py
-  exec hisatgenotype_locus.py "${@}"
-
 %post
   . /opt/conda/bin/activate && \
   conda install -q -y \
